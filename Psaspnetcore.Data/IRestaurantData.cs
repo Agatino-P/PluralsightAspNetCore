@@ -5,6 +5,7 @@ namespace Psaspnetcore.Data
 {
     public interface IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
+        
+         IEnumerable<Restaurant> GetByName(string partialName = null);
     }
 }

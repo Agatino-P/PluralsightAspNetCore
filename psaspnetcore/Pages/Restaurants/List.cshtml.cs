@@ -25,7 +25,7 @@ namespace psaspnetcore.Pages.Restaurants
         public void OnGet()
         {
             Message = _configuration["Logging:LogLevel:Default"];
-            Restaurants = _restaurantData.GetAll();
+            Restaurants = _restaurantData.GetByName();
         }
     }
 }
