@@ -30,5 +30,24 @@ namespace Psaspnetcore.Data
                 .Where(r => string.IsNullOrWhiteSpace(partialName) || r.Name.Contains(partialName))
                 .OrderBy(r => r.Name);
         }
+
+        public Restaurant Update(Restaurant updatedRestaurant)
+        {
+            Restaurant existing = _restaurants.FirstOrDefault(r => r.Id == updatedRestaurant.Id);
+            if (existing!= null)
+            {
+                existing.Name = updatedRestaurant.Name;
+                existing.Location= updatedRestaurant.Location;
+                existing.Cuisine= updatedRestaurant.Cuisine;
+            }
+            return existing;
+        }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
+
     }
 }

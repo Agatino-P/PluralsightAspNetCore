@@ -3,7 +3,13 @@
 @{ 
 }
 
-<h2>@Model.Restaurant.Name </h2>
+<h2>
+    <span>@Model.Restaurant.Name</span>
+    <a class="btn btn-lg"
+       asp-page="./Edit" asp-route-restaurantId="@Model.Restaurant.Id">
+        <i class="fas fa-edit"></i>
+    </a>
+</h2>
 <div>
     Id: @Model.Restaurant.Id
 </div>
@@ -14,4 +20,4 @@
 <div>
     Location: @Model.Restaurant.Cuisine
 </div>
-<a asp-page="./List" class="btn btn-outline-dark">All Restaurants </a>
+<a asp-page="./List" class="btn btn-primary">All Restaurants </a>
