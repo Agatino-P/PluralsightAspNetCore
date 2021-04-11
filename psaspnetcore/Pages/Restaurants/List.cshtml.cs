@@ -1,22 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Psapnetcore.Core;
 using Psaspnetcore.Data;
+using System.Collections.Generic;
 
 namespace psaspnetcore.Pages.Restaurants
 {
-    public class  ListModel : PageModel
+    public class ListModel : PageModel
     {
         private readonly IConfiguration _configuration;
         private readonly IRestaurantData _restaurantData;
-        public IEnumerable<Restaurant> Restaurants { get; set; }
 
-        public string Message  { get; set; }
+        public IEnumerable<Restaurant> Restaurants { get; set; }
+        
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
+
+        public string Message { get; set; }
         public ListModel(IConfiguration configuration, IRestaurantData restaurantData)
         {
             _configuration = configuration;
@@ -25,7 +26,7 @@ namespace psaspnetcore.Pages.Restaurants
         public void OnGet()
         {
             Message = _configuration["Logging:LogLevel:Default"];
-            Restaurants = _restaurantData.GetByName();
+            Restaurants = _restaurantData.GetByName(SearchTerm);
         }
     }
 }

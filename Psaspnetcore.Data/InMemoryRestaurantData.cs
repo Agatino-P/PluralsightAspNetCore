@@ -18,6 +18,12 @@ namespace Psaspnetcore.Data
             };
 
         }
+
+        public Restaurant GetById(int restaurantId)
+        {
+            return _restaurants.SingleOrDefault(r => r.Id == restaurantId);
+        }
+
         public IEnumerable<Restaurant> GetByName(string partialName = null)
         {
             return _restaurants.AsReadOnly()

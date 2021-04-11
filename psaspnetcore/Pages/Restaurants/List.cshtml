@@ -7,11 +7,11 @@
 <body>
     <div>
         <form  method="get">
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="search" class="form-control" value=""/>
+            <div class="form-group"> 
+                <div class="input-group mb-0">
+                    <input type="search" class="form-control" asp-for="SearchTerm"/>
                     <span class="input-group-append">
-                        <button class="btn">
+                        <button class="btn btn-outline-secondary">
                             <i class="fas fa-search"></i>    
                         </button>
                     </span>
@@ -29,6 +29,12 @@
                     <td>@restaurant.Name</td>
                     <td>@restaurant.Location</td>
                     <td>@restaurant.Cuisine</td>
+                    <td>
+                        <a class="btn btn-lg" 
+                           asp-page="./Detail" asp-route-restaurantId="@restaurant.Id">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </td>
                 </tr>
             }
         </table>

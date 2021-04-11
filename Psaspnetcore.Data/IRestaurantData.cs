@@ -7,5 +7,6 @@ namespace Psaspnetcore.Data
     {
         
          IEnumerable<Restaurant> GetByName(string partialName = null);
+        Restaurant GetById(int restaurantId);
     }
 }

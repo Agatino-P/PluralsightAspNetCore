@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "psaspnetcore", "psaspnetcore\psaspnetcore.csproj", "{45DE3FE4-2C7D-4CCE-8E2F-A8FFB7EA52F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Psapnetcore.Core", "Psapnetcore.Core\Psapnetcore.Core.csproj", "{70432AB7-C320-4BAA-8C1D-70C9D126486C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psapnetcore.Core", "Psapnetcore.Core\Psapnetcore.Core.csproj", "{70432AB7-C320-4BAA-8C1D-70C9D126486C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Psaspnetcore.Data", "Psaspnetcore.Data\Psaspnetcore.Data.csproj", "{E13B1E1D-276F-4B74-BE38-39A2889A055B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psaspnetcore.Data", "Psaspnetcore.Data\Psaspnetcore.Data.csproj", "{E13B1E1D-276F-4B74-BE38-39A2889A055B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
