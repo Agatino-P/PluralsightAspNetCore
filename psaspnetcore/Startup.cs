@@ -25,6 +25,7 @@ namespace psaspnetcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<PsancDbContext>();
             services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
         }
 

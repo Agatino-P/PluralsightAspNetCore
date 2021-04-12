@@ -10,6 +10,7 @@ namespace Psaspnetcore.Data
 
         public InMemoryRestaurantData()
         {
+
             _restaurants = new()
             {
                 new Restaurant { Id = 1, Name = "Scott", Location = "Maryland", Cuisine = Restaurant.CuisineType.Italian },
