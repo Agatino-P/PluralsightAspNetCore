@@ -31,6 +31,14 @@ namespace Psaspnetcore.Data
                 .OrderBy(r => r.Name);
         }
 
+
+        public Restaurant Add(Restaurant newRestaurant)
+        {
+            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(newRestaurant);
+            return newRestaurant;
+        }
+
         public Restaurant Update(Restaurant updatedRestaurant)
         {
             Restaurant existing = _restaurants.FirstOrDefault(r => r.Id == updatedRestaurant.Id);
@@ -47,7 +55,6 @@ namespace Psaspnetcore.Data
         {
             return 0;
         }
-
 
     }
 }

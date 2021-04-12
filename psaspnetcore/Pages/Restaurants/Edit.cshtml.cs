@@ -23,12 +23,20 @@ namespace psaspnetcore.Pages.Restaurants
 
             Cuisines = _htmlHelper.GetEnumSelectList<Restaurant.CuisineType>();
         }
-        public IActionResult OnGet(int restaurantId)
+        public IActionResult OnGet(int? restaurantId)
         {
-            Restaurant = _restaurantData.GetById(restaurantId);
-            if (Restaurant == null)
+            if (restaurantId.HasValue)
             {
-                return RedirectToPage("./NotFound");
+                Restaurant = _restaurantData.GetById(restaurantId.Value);
+                if (Restaurant == null)
+                {
+                    return RedirectToPage("./NotFound");
+                }
+            }
+
+            if (!restaurantId.HasValue)
+            {
+                Restaurant = new();
             }
 
             return Page();
@@ -36,13 +44,22 @@ namespace psaspnetcore.Pages.Restaurants
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            if (Restaurant.Id > 0)
             {
                 Restaurant = _restaurantData.Update(Restaurant);
-                _restaurantData.Commit();
-            return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
             }
-            return Page();
+            if (Restaurant.Id <= 0)
+            {
+                Restaurant = _restaurantData.Add(Restaurant);
+            }
+            _restaurantData.Commit();
+            return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
         }
     }
 }
+
