@@ -9,6 +9,9 @@ namespace psaspnetcore.Pages.Restaurants
     {
         public Restaurant Restaurant { get; set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         private readonly IRestaurantData _restaurantData;
 
         public DetailModel(IRestaurantData restaurantData)

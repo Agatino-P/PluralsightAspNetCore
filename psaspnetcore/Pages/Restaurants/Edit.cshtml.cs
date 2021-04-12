@@ -58,6 +58,7 @@ namespace psaspnetcore.Pages.Restaurants
                 Restaurant = _restaurantData.Add(Restaurant);
             }
             _restaurantData.Commit();
+            TempData["Message"] = "Restaurant saved";
             return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
         }
     }
