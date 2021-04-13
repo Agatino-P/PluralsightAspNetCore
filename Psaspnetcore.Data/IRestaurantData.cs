@@ -1,4 +1,4 @@
-﻿using Psapnetcore.Core;
+﻿ using Psapnetcore.Core;
 using System.Collections.Generic;
 
 namespace Psaspnetcore.Data
@@ -9,6 +9,7 @@ namespace Psaspnetcore.Data
         Restaurant GetById(int restaurantId);
         Restaurant Add(Restaurant newRestaurant);
         Restaurant Update(Restaurant updatedRestaurant);
+        Restaurant Delete(int restaurantId);
         int Commit();
     }
 }

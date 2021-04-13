@@ -57,5 +57,12 @@ namespace Psaspnetcore.Data
             return 0;
         }
 
+        public Restaurant Delete(int restaurantId)
+        {
+            var restaurant = _restaurants.FirstOrDefault(r => r.Id == restaurantId);
+            if (restaurant != null)
+                _restaurants.Remove(restaurant);
+            return restaurant;
+        }
     }
 }
