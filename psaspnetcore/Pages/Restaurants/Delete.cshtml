@@ -1,0 +1,29 @@
+﻿@page "{restaurantId}"
+@model psaspnetcore.Pages.Restaurants.DeleteModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <h2>Delete!</h2>
+    <div class="alert alert-danger">
+        Are you sure you want yo delete @Model.Restaurant.Name?
+    </div>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Yes!</button>
+        <a asp-page="List" class="btn btn-outline-dark">Cancel</a>
+    </form>
+</body>
+</html>

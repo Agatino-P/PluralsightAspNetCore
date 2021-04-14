@@ -38,12 +38,20 @@
                            asp-page="./Edit" asp-route-restaurantId="@restaurant.Id">
                             <i class="fas fa-edit"></i>
                         </a>
+                        <a class="btn btn-lg"
+                           asp-page="./Delete" asp-route-restaurantId="@restaurant.Id">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+
                     </td>
                 </tr>
             }
         </table>
     </div>
     <a asp-page="./Edit" class="btn btn-primary">Add new</a>
+    @section footer
+    {
     <div>@Model.Message</div>
+    }
 </body>
 
