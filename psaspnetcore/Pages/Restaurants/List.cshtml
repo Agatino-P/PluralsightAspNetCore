@@ -22,7 +22,7 @@
         </form>
     </div>
     <div>
-        <table class="table">
+        @*<table class="table">
             @foreach (var restaurant in Model.Restaurants)
             {
                 <tr>
@@ -46,9 +46,15 @@
                     </td>
                 </tr>
             }
-        </table>
-    </div>
+        </table>*@
+        <div class="card-deck">
+            @foreach (var restaurant in Model.Restaurants)
+            {
+                <partial name="_Summary" model="restaurant"/>
+            }
+        </div>
     <a asp-page="./Edit" class="btn btn-primary">Add new</a>
+            
     @section footer
     {
     <div>@Model.Message</div>
