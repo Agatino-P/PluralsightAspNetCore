@@ -47,6 +47,11 @@ namespace Psaspnetcore.Data
             return _context.Restaurants.Where(r => string.IsNullOrWhiteSpace(partialName) || r.Name.Contains(partialName)).OrderBy(r=>r.Name).ToList();
         }
 
+        public int GetCountOfRestaurants()
+        {
+            return _context.Restaurants.Count();
+        }
+
         public Restaurant Update(Restaurant updatedRestaurant)
         {
             EntityEntry<Restaurant> entity = _context.Restaurants.Attach(updatedRestaurant);

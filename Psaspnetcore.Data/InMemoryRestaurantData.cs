@@ -64,5 +64,10 @@ namespace Psaspnetcore.Data
                 _restaurants.Remove(restaurant);
             return restaurant;
         }
+
+        public int GetCountOfRestaurants()
+        {
+            return _restaurants.Count;
+        }
     }
 }

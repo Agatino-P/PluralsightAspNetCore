@@ -10,6 +10,8 @@ namespace Psaspnetcore.Data
         Restaurant Add(Restaurant newRestaurant);
         Restaurant Update(Restaurant updatedRestaurant);
         Restaurant Delete(int restaurantId);
+        int GetCountOfRestaurants();
+
         int Commit();
     }
 }
