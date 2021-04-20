@@ -13,8 +13,8 @@ namespace psaspnetcore.Pages.Restaurants
         private readonly IRestaurantData _restaurantData;
 
         public IEnumerable<Restaurant> Restaurants { get; set; }
-        
-        [BindProperty(SupportsGet =true)]
+
+        [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
         public string Message { get; set; }

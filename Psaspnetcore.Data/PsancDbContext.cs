@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Psapnetcore.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Psaspnetcore.Data
 {
@@ -14,7 +9,7 @@ namespace Psaspnetcore.Data
         private readonly IConfiguration _configuration;
 
         public DbSet<Restaurant> Restaurants { get; set; }
-        
+
         public PsancDbContext(IConfiguration configuration)
         {
             _configuration = configuration;

@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Psapnetcore.Core;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Psaspnetcore.Data
 {
@@ -33,7 +30,10 @@ namespace Psaspnetcore.Data
         {
             var restaurant = GetById(restaurantId);
             if (restaurant != null)
+            {
                 _context.Remove(restaurant);
+            }
+
             return restaurant;
         }
 
@@ -44,7 +44,7 @@ namespace Psaspnetcore.Data
 
         public IEnumerable<Restaurant> GetByName(string partialName = null)
         {
-            return _context.Restaurants.Where(r => string.IsNullOrWhiteSpace(partialName) || r.Name.Contains(partialName)).OrderBy(r=>r.Name).ToList();
+            return _context.Restaurants.Where(r => string.IsNullOrWhiteSpace(partialName) || r.Name.Contains(partialName)).OrderBy(r => r.Name).ToList();
         }
 
         public int GetCountOfRestaurants()

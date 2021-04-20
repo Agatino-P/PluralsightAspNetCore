@@ -43,11 +43,11 @@ namespace Psaspnetcore.Data
         public Restaurant Update(Restaurant updatedRestaurant)
         {
             Restaurant existing = _restaurants.FirstOrDefault(r => r.Id == updatedRestaurant.Id);
-            if (existing!= null)
+            if (existing != null)
             {
                 existing.Name = updatedRestaurant.Name;
-                existing.Location= updatedRestaurant.Location;
-                existing.Cuisine= updatedRestaurant.Cuisine;
+                existing.Location = updatedRestaurant.Location;
+                existing.Cuisine = updatedRestaurant.Cuisine;
             }
             return existing;
         }
@@ -61,7 +61,10 @@ namespace Psaspnetcore.Data
         {
             var restaurant = _restaurants.FirstOrDefault(r => r.Id == restaurantId);
             if (restaurant != null)
+            {
                 _restaurants.Remove(restaurant);
+            }
+
             return restaurant;
         }
 
